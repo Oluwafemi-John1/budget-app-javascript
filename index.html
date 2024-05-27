@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Budget</title>
+    <link rel="stylesheet" href="bootstrap.css">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+        crossorigin="anonymous"></script>
+</head>
+
+<body class="bg-dark text-light">
+    <div class="col-lg-8 col-10 mx-auto mt-lg-5 mt-3">
+        <h2 class="text-center">Budget Application</h2>
+        <p class="alert alert-info p-3">In a world with the highest ever known frequency of Sapa, budgeting is now a
+            must. Will you be prudent with your spending or you want to be poor?</p>
+        <div class="my-3 shadow">
+            <p class="alert alert-danger p-2 text-center" style="display: none;" id="error1">Please enter your budget
+            </p>
+            <label for="" class="form-label">Enter your budget:</label>
+            <input type="number" class="form-control" id="budget">
+            <button class="btn btn-info my-3 w-100" onclick="submitBudget()">Submit</button>
+        </div>
+        <div class="row">
+            <div class="alert alert-success p-3 col mx-2"><span class="fs-1">&#8358;</span><br> <span
+                    id="showBudget">Budget appears here</span></div>
+            <div class="alert alert-warning p-3 col mx-2"><span class="fs-1">&#8358;</span> <br> <span
+                    id="showBalance">Balance</span></div>
+        </div>
+
+        <div class="my-3">
+            <h3>Add items</h3>
+            <p class="alert alert-danger p-2 text-center" style="display: none;" id="error2">Please fill in your details
+            </p>
+            <input type="text" class="my-2 form-control" placeholder="Name" id="itemName">
+            <input type="number" class="my-2 form-control" placeholder="Amount" id="itemAmount">
+            <input type="number" class="my-2 form-control" placeholder="quantity" id="itemQuantity">
+            <button onclick="addItems()" class="btn btn-info w-100">Add</button>
+        </div>
+        <div id="showEverything"></div>
+    </div>
+
+    <!-- Button trigger modal -->
+    <!-- <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+        Launch demo modal
+    </button> -->
+
+    <!-- Modal -->
+    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog text-dark">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h1 class="modal-title fs-5" id="exampleModalLabel">Edit Items</h1>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <input type="text" class="my-2 form-control" placeholder="Name" id="newName">
+                    <input type="number" class="my-2 form-control" placeholder="Amount" id="newAmount">
+                    <input type="number" class="my-2 form-control" placeholder="quantity" id="newQuantity">
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    <button class="btn btn-primary" onclick="editValues()" data-bs-dismiss="modal">Save changes</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+
+</html>
